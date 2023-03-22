@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>promise</title>
+  </head>
+  <body>
+    <script>
+      var apiUrl = "https://5e7487579dff1200163537d7.mockapi.io/hotels";
+      // fetch - la hàm để gừi request từ code js => server để lấy dữ liệu
+      // Không biết server mất bao lâu để trả về được dữ liệu cho chúng ta
+      // var hotels = fetch(apiUrl);
+      // console.log(hotels);
+      var promise = new Promise(function (resolve, reject) {
+        console.log(1);
+        setTimeout(function () {
+          console.log(2);
+          return resolve(100);
+        }, 3000);
+      });
+
+      promise.then(function (data) {
+        console.log(data);
+      });
+
+      //   Chuyển màu màn hình sang màu vàng sau 1 giây và sau 1 giấy nữa chuyển sang mày xanh
+      //    Sử dụng promise
+      function setColorPerTime(color, time) {
+        return new Promise(function (resolve) {
+          setTimeout(function () {
+            document.querySelector("body").style.background = color;
+            resolve();
+          }, time);
+        });
+      }
+      setColorPerTime("yellow", 1000)
+        .then(function () {
+          setColorPerTime("green", 1000);
+        })
+        .catch();
+    </script>
+  </body>
+</html>

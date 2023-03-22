@@ -1,4 +1,4 @@
-// JavaScript Built-in Functions
+/* #######JavaScript Built-in Functions####### */
 //toString()
 // join() *
 // push() *
@@ -73,3 +73,25 @@ s.forEach(function (currentValue, index, array) {
 console.log(f);
 
 //map() duyệt qua từng phần từ trong mảng và trả về mảng mới;
+
+/* #######Các hàm built-in xử lý ngày tháng####### */
+// https://www.w3schools.com/js/js_date_methods.asp
+// Dang iso
+// var miliseconds = Date.parse("2000-03-15");
+// var miliseconds = Date.parse("2000-03");
+var miliseconds = Date.parse("2000");
+console.log(miliseconds);
+var date = new Date(miliseconds);
+console.log(date);
+
+var days = [
+  "Sunday",
+  "Monday",
+  "Tuesday",
+  "wednesday",
+  "thursday",
+  "Friday",
+  "Saturday",
+];
+var birthday = new Date("2023-03-18");
+console.log(days[birthday.getDay()]);

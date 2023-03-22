@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>string-built-in</title>
+  </head>
+  <body>
+    <h1>string-built-in js</h1>
+    <br />
+    Chuỗi gốc: <input type="text" id="origin" />
+    <br />
+    Chuỗi thay thế: <input type="text" id="repl" />
+    <br />
+    Chuỗi mới: <input type="text" id="reValue" />
+    <button id="action">Replace</button>
+
+    <script>
+      // 1.Xác định tất cả các dom
+      var chuoigoc = document.getElementById("origin");
+      var chuoithaythe = document.getElementById("repl");
+      var chuoimoi = document.getElementById("reValue");
+      var replace = document.getElementById("action");
+      // 2.Tạo sự kiện cho thẻ button
+
+      // https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String
+      var str = "welcom to ctu ctu ctu ctu ctu";
+      // console.log(str.indexOf("ctu"));
+      // arr.replace js CHỈ thay thế chuỗi đầu tiên tìm thấy
+      while (str.indexOf("ctu") != -1) {
+        str = str.replace("ctu", "Can Tho university");
+      }
+      console.log(str);
+    </script>
+  </body>
+</html>
